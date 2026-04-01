@@ -1,7 +1,6 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { Box, Text } from '../../ink.js';
-import { isSeamlessBlockTerminal, blockArtToFallback } from '../../utils/logoV2Utils.js';
 export type ClawdPose = 'default' | 'arms-up' // both arms raised (used during jump)
 | 'look-left' // both pupils shifted left
 | 'look-right'; // both pupils shifted right
@@ -33,10 +32,7 @@ const NERV_BLOCKS: readonly string[] = [
   '                 ▀▀▀▀▀▀▀▀▀▀',
 ];
 
-// Select logo variant once at module load (env vars are stable at runtime)
-const NERV_LOGO = isSeamlessBlockTerminal()
-  ? NERV_BLOCKS
-  : blockArtToFallback(NERV_BLOCKS);
+const NERV_LOGO = NERV_BLOCKS;
 
 // NERV emblem replaces the original Clawd mascot with the fig leaf logo.
 export function Clawd(t0: Props | undefined) {
