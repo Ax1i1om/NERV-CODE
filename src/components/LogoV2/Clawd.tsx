@@ -39,7 +39,7 @@ export function Clawd(t0: Props | undefined) {
   const $ = _c(2);
   let t1;
   if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
-    t1 = <Box flexDirection="column">{NERV_LOGO.map((line, i) => <Text key={i} color="claude">{line}</Text>)}</Box>;
+    t1 = <Box flexDirection="column">{NERV_LOGO.map((line, i) => <Text key={i} color="claude" wrap="truncate-end">{line}</Text>)}</Box>;
     $[0] = t1;
   } else {
     t1 = $[0];

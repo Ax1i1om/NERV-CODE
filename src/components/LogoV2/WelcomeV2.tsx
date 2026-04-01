@@ -80,7 +80,7 @@ export function WelcomeV2() {
   let t0;
   if ($[0] !== columns || $[1] !== useFullEmblem) {
     t0 = <Box flexDirection="column">
-      {emblem.map((line, i) => <Text key={i} color="claude">{line}</Text>)}
+      {emblem.map((line, i) => <Text key={i} color="claude" wrap="truncate-end">{line}</Text>)}
       <Text>{' '}</Text>
       <Text dimColor={true}>{'     '}{MOTTO}</Text>
       <Text>{' '}</Text>
