@@ -75,8 +75,13 @@ The script will install dependencies, restore internal SDKs, build the project, 
 ### Manual Build
 
 ```bash
-# 1. Install dependencies
-npm install --legacy-peer-deps
+# 1. Install dependencies (推荐 bun，项目构建脚本依赖 bun)
+bun install
+# 如果使用 npm，必须加 --legacy-peer-deps：
+#   npm install --legacy-peer-deps
+# 原因：项目使用 react@19.3.0-canary，npm 的 semver 严格模式
+# 认为 canary 预发布版本不满足 react-compiler-runtime 的
+# peerDependency "^19"，会报依赖冲突。bun 无此问题。
 
 # 2. Restore Anthropic internal SDKs (from sourcemap)
 cp -r node_modules_sourcemap/@anthropic-ai/bedrock-sdk node_modules/@anthropic-ai/
